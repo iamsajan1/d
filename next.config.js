@@ -1,7 +1,9 @@
-/** @type {import('next').NextConfig} */
+const withPlugins = require('next-compose-plugins');
+const withTM = require('next-transpile-modules')(['tailwindcss']);
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+};
 
-module.exports = nextConfig
+module.exports = withPlugins([withTM], nextConfig);
